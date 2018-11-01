@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Make a Freestyle</title>
+		<meta charset="utf-8">
+		<link href="makeafreestyle.css" rel="stylesheet" type="text/css" />
+		<script src="jquery-2.1.4.min.js" type="text/javascript"></script>
+		<script src="makeafreestyle.js" type="text/javascript"></script>
+		<script src="sortable.js" type="text/javascript"></script>
+		<script type="text/javascript">
+		//Handles deselecting tricks
+			/*$(document).click(function(event) {
+    			var iClicked = $(event.target);
+
+    			if($(iClicked).hasClass(".trick") == true){
+    				//Unclick
+    			}
+			});*/
+		</script>
+	</head>
+	<body onload="whenBlank();">
+
+	<nav>
+		<!--<a href="#" onclick="toggleNewTrickMenu(true);">Add</a>
+		<a href="#" onclick="duplicate();">Duplicate</a>
+		<a href="#" onclick="removeEl();">Remove</a>
+		<a href="#" onclick="load();">Load</a>
+		<a href="#" onclick="save();">Save</a>
+		<a href="#" onclick="deleteSave();">Delete Saved</a>-->
+		<span onclick="toggleNewTrickMenu(true);">Add</span>
+		<p>&emsp;|&emsp;</p>
+		<span onclick="duplicate();">Duplicate</span>
+		<p>&emsp;|&emsp;</p>
+		<span onclick="removeEl();">Remove</span>
+		<p>&emsp;|&emsp;</p>
+		<span onclick="load();">Load</span>
+		<p>&emsp;|&emsp;</p>
+		<span onclick="save();">Save</span>
+		<p>&emsp;|&emsp;</p>
+		<span onclick="deleteSave();">Delete</span>
+		<p>&emsp;|&emsp;</p>
+
+		<span class="ignoreSpan">Highlight Trick</span>
+		<select id="trickcolor" onchange="highlight(this.value);">
+			<option>Red</option>
+			<option>Orange</option>
+			<option>Green</option>
+			<option>Lime</option>
+			<option>Blue</option>
+			<option>Purple</option>
+			<option>Black</option>
+		</select>
+		<!--<p>&emsp;|&emsp;</p>
+
+		<span class="ignoreSpan">Choose Song</span>
+		<input type='file' id='song' onchange='loadsong(event);' />
+		<p>&emsp;|&emsp;</p>
+
+		<audio id="music" controls>
+			Your browser does not support the audio element.
+		</audio>-->
+	</nav>
+
+	<div class="newTrick">
+		<div class="addCustom">
+			<h2>Add Custom Trick</h2>
+			<input type="text" class="addCustom-trickName grayText" value="Custom trick" onfocus="customTrickText(this, true);" onblur="customTrickText(this, false);" />
+		</div>
+
+		<p class="addTrick-or">OR</p>
+
+		<div class="addPreset">
+			<span>Select from Preset:&nbsp;</span>
+			<select id="trickPresets" onchange="addTextPreset();">
+				<option>&lt;Select&gt;</option>
+				<option>Gravity Pull</option>
+				<option>Sleeper</option>
+				<option>Rock the Baby</option>
+				<option>Eiffel Tower</option>
+				<option>Jamaican Flag</option>
+				<option>Creeper</option>
+				<option>Forward Pass</option>
+				<option>Around the World</option>
+				<option>World Tour</option>
+				<option>UFO</option>
+				<option>Breakaway</option>
+				<option>Trapeze</option>
+				<option>Sidewinder</option>
+				<option>Double or Nothing</option>
+				<option>Split the Atom</option>
+				<option>Atomic Bomb</option>
+				<option>Split-Bottom Mount</option>
+				<option>Pop n' Fresh</option>
+				<option>Mach 5</option>
+				<option>1 1/2 Mount</option>
+				<option>Kamikaze</option>
+				<option>Magic Drop</option>
+				<option>Kwijibo</option>
+				<option>Hourglass</option>
+			</select>
+		</div>
+
+		<div class="addTrick-buttons">
+			<button onclick="toggleNewTrickMenu(false);" class="newTrick-cancel">Cancel</button>
+			<button onclick="appendNewTrick();" class="newTrick-accept">Accept</button>
+		</div>
+			
+	</div>
+
+	<ul class="freestyle" onchange="whenBlank();"></ul>
+
+		<!--<div id="screenblock" onclick="closeElement(document.getElementById('addElement'), this);"></div>-->
+	<div id="deselect" onclick="deselect();"></div>
+
+
+	</body>
+</html>
+
+<!--
+	<li class="trick" draggable="true" ondragenter="dragenter(event)" ondragstart="dragstart(event)">Apple</li>
+-->
